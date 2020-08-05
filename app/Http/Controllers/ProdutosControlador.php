@@ -3,15 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Produtos;
 
 class ProdutosControlador extends Controller
 {
-    public function index(){
-        return response()->json([
-            ['id' => 1, 'nome' => 'produto 1'],
-            ['id' => 2, 'nome' => 'produto 2'],
-            ['id' => 3, 'nome' => 'produto 3'],
-            ['id' => 4, 'nome' => 'produto 4'],
-        ]);
+    public function index()
+    {
+        return Produtos::all()->toJson();
     }
+
+    public function store(Request $request)
+    {
+        $prods = new Produtos
+        ([
+            'nome' => $request->nome,
+            'categorias_id' => $request->categorias_id,
+            'estoque' => $request->estoque,
+            'valor' => $request->valor,
+        ]);
+
+        $prods->save();
+
+        return response()->json
+        ([
+            'res' => 'Produto cadastrado com sucesso!'
+        ], 201);
+
+
+    }
+
+
 }

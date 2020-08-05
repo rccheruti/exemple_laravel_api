@@ -17,3 +17,8 @@ Route::prefix('auth')->group(function (){
 });
 
 Route::get('produtos', 'ProdutosControlador@index')->middleware('auth:api');
+Route::post('produtos', 'ProdutosControlador@store')->middleware('auth:api');
+
+
+Route::get('categorias','CategoriasControlador@index')->middleware('auth:api');
+Route::post('categorias','CategoriasControlador@store')->middleware('auth:api');
