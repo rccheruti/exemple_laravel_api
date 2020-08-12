@@ -15,6 +15,7 @@ ENG     > This project was create to improve my skills in the Laravel framework.
 - Instalação padrão Laravel
 - Configurar o .env com informações do DB e um SMTP de email.
 - Instalar o passport no laravel.
+- Rodar o comando "php artisan migrate"
 
 ## Modulos
 
