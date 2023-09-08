@@ -10,7 +10,7 @@ ENG     > This project was create to improve my skills in the Laravel framework.
 
 
 
-## Instação
+## Instalação
 
 - Instalação padrão Laravel
 - Configurar o .env com informações do DB e um SMTP de email.
